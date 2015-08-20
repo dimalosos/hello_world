@@ -1,0 +1,21 @@
+*.py[cod]
+
+# Installer logs
+pip-log.txt
+
+# Backup files
+*~
+
+# Tests
+.coverage
+/cover
+
+# Documentation build
+doc/build
+
+# Dev SQLite Database
+*.db
+
+# python virtual environment
+/.env
+
