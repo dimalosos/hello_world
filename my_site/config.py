@@ -1,8 +1,7 @@
 # configurations
-
+"""
 class Config(object):
 
-"""create class that inherits from object class """
 
 	DEBUG = False
 	TESTING = False
@@ -16,3 +15,4 @@ class DevelopmentConfig(Config):
 
 class TestingConfig(Config):
     TESTING = True
+"""
