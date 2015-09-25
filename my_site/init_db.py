@@ -1,4 +1,5 @@
 from main_app import db
 from user import User
 
-db.create_all()
+# create all tables
+db.create_all() 
