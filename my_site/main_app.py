@@ -15,7 +15,8 @@ from user import User
 
 @app.route('/')
 def home():
-    return "Hello world"
+    return reder_template(
+        'hello_world.html')
 
 
 @app.route('/users', methods = ['GET'])
