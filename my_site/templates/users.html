@@ -1,0 +1,33 @@
+{% extends "templates/base.html" %}
+{% block content %}
+    <a href="{{ view_data['create_user_url'] }}">Create User</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in view_data['users'] %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <a href="{{ url_for('.delete_user', id=user.id) }}">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">That's all</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

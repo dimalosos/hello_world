@@ -1,0 +1,13 @@
+{% extends "templates/base.html" %}
+{% block content %}
+    <form method="POST" action="{{ url_for('.create_user') }}">
+
+        <label for="input-username">Username:</label>
+        <input id="input-username" type="text" name="username" value="">
+
+        <label for="input-email">Email:</label>
+        <input id="input-email" type="text" name="email" value="">
+
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}
