@@ -17,10 +17,6 @@ from main_app import db
 
 from models.user import User
 
-# From templates request UserForm
-
-from templates.forms import UserForm
-
 # Define a Blueprint for /user
 
 user_blueprint = Blueprint(
@@ -39,10 +35,9 @@ def home():
 
 @user_blueprint.route('/users', methods=['GET'])
 def show_users():
-    form = UserForm(request.form)
     users = User.query.all()
     return render_template(
-        'templates/users.html', form=form
+        'templates/users.html',
         title='Users',
         view_data={
             'create_user_url': url_for('.create_user'),
