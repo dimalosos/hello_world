@@ -7,6 +7,7 @@ from flask import (
     url_for,
     request,
     Blueprint,
+
 )
 
 # From main app import db object
@@ -53,11 +54,15 @@ def create_user():
         return render_template('templates/user_form.html')
     return _create_user()
 
+from forms.userform import UserForm
 
 def _create_user():
-    user = User(request.form['username'], request.form['email'])
-    db.session.add(user)
-    db.session.commit()
+    form = UserForm(request.form)
+    if form.validate():
+        user = User(form.username.data, form.email.data)
+        db.session.add(user)
+        db.session.commit()
+    else: return render_template('templates/error.html')
 
     return redirect(url_for('.show_users'))
 
