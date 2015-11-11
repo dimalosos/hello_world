@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf=8">
+        <title>meta charset="utf=8" всегда  перед <!titile></title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='userstyle.css') }}">
+    </head>
+    <body>
+    	<p>Error in registration form. Please follow the link to try again!
+    		<br>
+    	<a  href="{{ url_for('.create_user') }}">
+<img src="https://i.ytimg.com/vi/-SwjXrYfwj4/hqdefault.jpg" width="200" height="200"><br>Create User</a>
+
+    </body>
+</html>
