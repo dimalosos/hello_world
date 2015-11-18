@@ -6,15 +6,21 @@ from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, template_folder='.')
 
-# config db
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+# Configure
+app.config.from_object('config.DevelopmentConfig')
+
 db = SQLAlchemy(app)
 
 # Import blueprnts from controllers
 
-from controllers.user import user_blueprint
+from controllers.user import (
+		user_blueprint, 
+		#admin_blueprint,
+)
 
 # register Blueprints
 
 app.register_blueprint(user_blueprint)
+
+#app.register_blueprint(admin_blueprint)
