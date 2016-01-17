@@ -18,4 +18,4 @@ doc/build
 
 # python virtual environment
 /.env
-
+/.venv
