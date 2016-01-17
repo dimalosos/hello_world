@@ -24,3 +24,4 @@ from controllers.user import (
 app.register_blueprint(user_blueprint)
 
 #app.register_blueprint(admin_blueprint)
+

@@ -7,7 +7,20 @@ admin_blueprint = Blueprint(
 
 # Admin functions
 
-@admin_blueprint.route('/admin/edit', methods=['GET', 'POST'])
-def edit_users():
-    pass
+@admin_blueprint.route('/admin/delete/<int:id>', methods=['GET'])
+def delete_user(id):
+	user = User.query.get(id)
+	if user:
+		db.session.delete(user)
+		db.session.commit()
+	return redirect(url_for('show_users'))
+
     
+
+@user_blueprint.route('/users/delete/<int:id>', methods=['GET'])
+def delete_user(id):
+    user = User.query.get(id)
+    if user:
+        db.session.delete(user)
+        db.session.commit()
+    return redirect(url_for('.show_users'))

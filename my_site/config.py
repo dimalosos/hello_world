@@ -1,7 +1,7 @@
 class Config(object):
 		DEBUG = False
 		TESTING = False
-		SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/test.db'
+		SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db' #'sqlite:///tmp/test.db'
 
 class ProductionConfig(Config):
 	pass
